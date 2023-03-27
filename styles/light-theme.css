@@ -1,0 +1,16 @@
+:root {
+	--bg-color: #c7cbcc;
+	--text-color: #000000;
+	--accent-color: #1364cf;
+}
+
+.switcher__radio {
+	filter: invert(0);
+}
+
+.switcher__radio:checked {
+	filter: invert(1);
+}
+.switcher__status {
+	filter: invert(0);
+}

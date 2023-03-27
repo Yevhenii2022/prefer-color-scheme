@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>prefers-color-scheme</title>
+
+		<!-- Общий файл стилей -->
+		<link rel="stylesheet" href="./styles/styles.css" />
+		<!-- Файл стилей для светлой темы -->
+		<link
+			rel="stylesheet"
+			href="./styles/light-theme.css"
+			media="(prefers-color-scheme: light)"
+		/>
+		<!-- Файл стилей для темной темы -->
+		<link
+			rel="stylesheet"
+			href="./styles/dark-theme.css"
+			media="(prefers-color-scheme: dark)"
+		/>
+	</head>
+	<body>
+		<p>
+			Атирибуты <span>media="(prefers-color-scheme: light)"</span> и
+			<span>media="(prefers-color-scheme: dark)"</span> позволяют браузеру
+			автоматически выбирать тему, в зависимости от установленной в системе
+			пользователя.
+		</p>
+		<p>
+			При этом загружатся будут оба файла стилей, но приоритет загрузки отдаётся
+			тому, который соотвествует теме, установленной в системе.
+		</p>
+
+		<!-- Color scheme switcher -->
+
+		<fieldset class="switcher">
+			<legend class="switcher__legend">Схема</legend>
+			<input
+				class="switcher__radio switcher__radio--light"
+				type="radio"
+				name="color-scheme"
+				value="light"
+				aria-label="Светлая"
+			/>
+			<input
+				class="switcher__radio switcher__radio--auto"
+				type="radio"
+				name="color-scheme"
+				value="auto"
+				aria-label="Системная"
+				checked
+			/>
+			<input
+				class="switcher__radio switcher__radio--dark"
+				type="radio"
+				name="color-scheme"
+				value="dark"
+				aria-label="Тёмная"
+			/>
+			<div class="switcher__status"></div>
+		</fieldset>
+
+		<script type="module" src="./js/switcher.js"></script>
+	</body>
+</html>
